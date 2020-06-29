@@ -153,6 +153,19 @@ namespace LinkedLists
                 size++;
                 Console.WriteLine(tail.data);
             }
+            public Boolean Find(T data)
+            {
+                Node<T> _current = head;
+                while(_current!=null)
+                {
+                    if ((_current.data).Equals(data))
+                        return true;
+                    _current = _current.next;
+
+                }
+                return false;
+
+            }
         }
             public static void Main(string[] args)
             {
@@ -176,6 +189,9 @@ namespace LinkedLists
             _linked.Delete(1000);
             Console.WriteLine();
             _linked.Print();
+            bool _find = _linked.Find(200);
+            Console.WriteLine(_find.ToString());
+
               Console.ReadLine();
             }
     }
